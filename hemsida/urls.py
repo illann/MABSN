@@ -4,10 +4,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
+	url(r'^$', 'hemsida.views.login'),
 	url(r'^admin/', include(admin.site.urls)),
 	(r'^articles/', include('article.urls')),
 	(r'^accounts/', include('userprofile.urls')),
 	url(r'^contact/$',  'hemsida.views.contact'),
+	
 	
 	#url(r'auth/', include('django.contrib.auth.urls')),
 	    

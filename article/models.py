@@ -22,7 +22,7 @@ class Article(models.Model):
 	del_date = models.CharField('Delivery date', blank = True, max_length=20)
 	q_date = models.DateField('Last date for offers')
 	kategori = models.CharField('Category', max_length=100)
-	filer = models.FileField(upload_to=get_upload_file_name, blank=True)
+	filer = models.FileField(upload_to='uploaded_files', blank=True)
 	state = models.BooleanField('Aktiv', default = True)
 	quotation_amount = models.PositiveIntegerField('Antal inkomna offerter', default=0)
 	

@@ -33,11 +33,13 @@ def auth_view(request):
     
 @login_required	
 def profile(request):
-	return render_to_response('loggedin.html', 
+	return render_to_response('profile.html', 
 							{'full_name': request.user.username})
-@login_required
+
 def invalid_login(request):
-    return render_to_response('invalid_login.html')
+    c = {}
+    c.update(csrf(request))    
+    return render_to_response('login.html', c)
 
 @login_required	
 def logout(request):
